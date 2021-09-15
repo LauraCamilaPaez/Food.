@@ -9,13 +9,14 @@
 
 <header>
     <a href="" class="logo">Food<span>.</span></a>
+    <div class="menuToggle" onclick="toggleMenu();"></div>
     <ul class="navigation">
-        <li><a href="#banner">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#expert">Expert</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#banner" onclick="toggleMenu();" >Home</a></li>
+        <li><a href="#about" onclick="toggleMenu();" >About</a></li>
+        <li><a href="#menu" onclick="toggleMenu();" >Menu</a></li>
+        <li><a href="#expert" onclick="toggleMenu();" >Expert</a></li>
+        <li><a href="#testimonials" onclick="toggleMenu();" >Testimonials</a></li>
+        <li><a href="#contact" onclick="toggleMenu();" >Contact</a></li>
     </ul>
 </header>
 
@@ -43,11 +44,14 @@
                 lacinia urna. Aliquam molestie est eu leo finibus, non sodales nisi efficitur. Nullam efficitur mauris
                 ipsum, quis fringilla nulla interdum vitae.</p>
         </div>
-        <div class="imgBx">
-            <img src="public/img/img1.jpg" alt="">
+        <div class="col50">
+            <div class="imgBx">
+                <img src="public/img/img1.jpg" alt="">
+            </div>
         </div>
     </div>
 </section>
+
 
 <section class="menu" id="menu">
     <div class="title">
@@ -218,7 +222,7 @@
 </section>
 
 <div class="copyrightText">
-    <p>Copyright &copy; 2021 Laura Camila <a href="https://github.com/LauraCamilaPaez" target="_blank">GitHub</a> </p>
+    <p>Copyright &copy; 2021 Laura Camila <a href="https://github.com/LauraCamilaPaez" target="_blank">GitHub</a></p>
 </div>
 
 
@@ -227,6 +231,14 @@
         const header = document.querySelector('header');
         header.classList.toggle("sticky", window.scrollY > 0);
     })
+
+    function toggleMenu() {
+        const menuToggle = document.querySelector('.menuToggle');
+        const navigation = document.querySelector('.navigation');
+        menuToggle.classList.toggle('active');
+        navigation.classList.toggle('active');
+    }
+
 </script>
 </body>
 </html>
